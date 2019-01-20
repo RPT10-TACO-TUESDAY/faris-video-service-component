@@ -10,6 +10,7 @@
   "scripts": {
     "test": "jest",
     "dev:react": "webpack -d --watch",
+    "build": "webpack --mode production --watch",
     "start": "nodemon ./server/index.js",
     "seed": "knex seed:run"
   },
