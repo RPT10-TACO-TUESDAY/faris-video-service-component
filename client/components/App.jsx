@@ -41,7 +41,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://127.0.0.1:8081/api/videos')
+    axios.get('faris-video-service-component-env.paejbawjtv.us-west-2.elasticbeanstalk.com/api/videos')
       .then((result) => {
         this.setState({
           isLoaded: true,
@@ -54,7 +54,7 @@ class App extends React.Component {
           error
         });
       }).then(() => {
-        axios.get('http://127.0.0.1:8081/api/users')
+        axios.get('faris-video-service-component-env.paejbawjtv.us-west-2.elasticbeanstalk.com/api/users')
           .then((result) => {
             this.setState({
               isLoaded: true,
@@ -68,7 +68,7 @@ class App extends React.Component {
             });
           });
       }).then(()=> {
-        axios.get('http://127.0.0.1:8081/api/games')
+        axios.get('faris-video-service-component-env.paejbawjtv.us-west-2.elasticbeanstalk.com/api/games')
           .then((result) => {
             this.setState({
               isLoaded: true,
