@@ -4,10 +4,10 @@ const path = require('path');
 let knex = require('knex')({
   client: 'pg',
   connection: {
-    host: '127.0.0.1',
-    user: 'taco',
-    password: 'tuesday',
-    database: 'twitchvid'
+    host: process.env.RDS_HOSTNAME || '127.0.0.1',
+    user: process.env.RDS_USERNAME || 'taco',
+    password: process.env.RDS_PASSWORD || 'tuesday',
+    database: process.env.RDS_DB_NAME || 'twitchvid'
   }
 });
 
