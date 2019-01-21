@@ -12,7 +12,7 @@
     "dev:react": "webpack -d --watch",
     "build": "webpack --mode production --watch",
     "start": "nodemon ./server/index.js",
-    "seed": "knex seed:run"
+    "poststart": "knex seed:run"
   },
   "dependencies": {
     "@babel/core": "^7.2.2",
