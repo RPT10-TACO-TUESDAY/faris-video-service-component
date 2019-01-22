@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('http://faris-video-service-component-env.paejbawjtv.us-west-2.elasticbeanstalk.com/api/videos', (req, res) => {
+app.get('/api/videos', (req, res) => {
   Videos.reset()
     .fetch()
     .then((videos) => {
@@ -27,7 +27,7 @@ app.get('http://faris-video-service-component-env.paejbawjtv.us-west-2.elasticbe
     });
 });
 
-app.get('http://faris-video-service-component-env.paejbawjtv.us-west-2.elasticbeanstalk.com/api/users', (req, res) => {
+app.get('/api/users', (req, res) => {
   Users.reset()
     .fetch()
     .then((users) => {
@@ -35,7 +35,7 @@ app.get('http://faris-video-service-component-env.paejbawjtv.us-west-2.elasticbe
     });
 });
 
-app.get('http://faris-video-service-component-env.paejbawjtv.us-west-2.elasticbeanstalk.com/api/games', (req, res) => {
+app.get('/api/games', (req, res) => {
   Games.reset()
     .fetch()
     .then((games) => {
