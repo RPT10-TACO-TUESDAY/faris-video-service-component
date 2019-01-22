@@ -35,7 +35,7 @@ app.get('/api/users', (req, res) => {
     });
 });
 
-app.get('/api/games/', (req, res) => {
+app.get('/api/games', (req, res) => {
   Games.reset()
     .fetch()
     .then((games) => {
