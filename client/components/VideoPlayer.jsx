@@ -47,8 +47,8 @@ const VideoPlayer = (props) => {
     <div>
       <iframe className="embed-responsive-item"
         src={'https://player.twitch.tv/?video=v' + props.video.id}
-        height="600"
-        width="1075"
+        height="780"
+        width="100%"
         scrolling="no"
         allowFullScreen={true}>
       </iframe>
@@ -61,8 +61,7 @@ const VideoPlayer = (props) => {
               d="M10 15c-4.044 0-7-3.288-7-5 0-1.712 2.956-5 7-5 4.044 0 7 3.288 7 5 0 1.712-2.956 5-7
             5m0-12c4.763 0 9 3.914 9 7s-4.237 7-9 7-9-3.914-9-7 4.237-7 9-7zm3 7a3 3 0 1 0-6 0 3 3 0 0 0 6 0z"
               fill="#999999"
-              fill-rule="evenodd">
-            </path>
+              fillRule="evenodd"/>
           </svg>
           <span> {props.video.view_count}</span>
         </ViewStyle>
