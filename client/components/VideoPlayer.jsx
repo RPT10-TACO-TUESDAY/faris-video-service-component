@@ -15,6 +15,7 @@ const VideoPlayerStyle = styled.div`
   background-color: #faf9fa;
   box-shadow: 5px 5px 2px 1px #dad8de;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-bottom: 5%;
 `;
 
 const CategoryStyle = styled.span`
