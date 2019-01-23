@@ -129,7 +129,7 @@ class App extends React.Component {
                 )}/>
               )}
               {this.state.games && (
-                <Route exact={true} path="/videos" render={() => (
+                <Route exact={true} path="/(videosAll|Clips)" render={() => (
                   <div>
                     <StyledSortBy>
                       <h4>Sorted By</h4>
