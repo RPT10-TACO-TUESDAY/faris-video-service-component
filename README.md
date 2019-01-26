@@ -44,43 +44,43 @@ From within the root directory:
 ### Postgresql & Server Instructions:
 
   #### Install after running npm install
-    ```sh
-    brew install postgresql
-    ```
+  ```sh
+  brew install postgresql
+  ```
 
   #### Connect to default database:
-    ```sh
-    psql postgres
-    ```
+  ```sh
+  psql postgres
+  ```
 
   #### Create a new role:
-    ```sh
-    CREATE ROLE taco WITH LOGIN PASSWORD 'tuesday';
-    ```
+  ```sh
+  CREATE ROLE taco WITH LOGIN PASSWORD 'tuesday';
+  ```
   #### Allow the new role, taco, to create databases:
-    ```sh
-    ALTER ROLE taco CREATEDB;
-    ```
+  ```sh
+  ALTER ROLE taco CREATEDB;
+  ```
   #### Create the database:
-    ```sh
-    CREATE DATABASE twitchvid;
-    ```
+  ```sh
+  CREATE DATABASE twitchvid;
+  ```
   #### Connect to the new database:
-    ```sh
-    \c twitchvid
-    ```
+  ```sh
+  \c twitchvid
+  ```
   #### Create tables and start server:
-    ```sh
-    npm start
-    ```
+  ```sh
+  npm start
+  ```
   #### To seed sample data into the database, in another terminal window run:
   ```sh
   npm run seed
   ```
   #### Helpful psql command tips can be found here:
-    ```sh
-    https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546
-    ```
+  ```sh
+  https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546
+  ```
 
 ### Making API Calls to Twitch.tv
 
