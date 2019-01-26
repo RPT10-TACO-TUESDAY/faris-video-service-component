@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/RPT10-TACO-TUESDAY/anna-chat-component
+  - https://github.com/RPT10-TACO-TUESDAY/george-categories-component
+  - https://github.com/RPT10-TACO-TUESDAY/milena-menu-bar-component
+  - https://github.com/RPT10-TACO-TUESDAY/faris-twitch-proxy
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@
 
 ## Usage
 
-> Some usage instructions
+> To get a better understanding of how you can create a video service module for Twitch.tv. This repo will render the first video in the sample collection to the DOM. The collection can also be accessed by adding '/videosAll' to the end of the path.
 
 ## Requirements
 
@@ -33,57 +33,62 @@ From within the root directory:
 
 ```sh
 -npm install
--npm dev:react to start webpack
--npm start to run the server
+```
+### Setup
+
+Initialize Webpack
+```sh
+-npm run build
 ```
 
-```sh
-Postgresql Instructions:
+Postgresql & Server Instructions:
 
--Install after running npm install
+  ### Install after running npm install
+    ```sh
+    brew install postgresql
+    ```
 
-****brew install postgresql
+  ### Connect to default database:
+    ```sh
+    psql postgres
+    ```
 
--Connect to default database:
+  ### Create a new role:
+    ```sh
+    CREATE ROLE taco WITH LOGIN PASSWORD 'tuesday';
+    ```
+  ### Allow the new role, taco, to create databases:
+    ```sh
+    ALTER ROLE taco CREATEDB;
+    ```
+  ### Create the database:
+    ```sh
+    CREATE DATABASE twitchvid;
+    ```
+  ### Connect to the new database:
+    ```sh
+    \c twitchvid
+    ```
+  ### Create tables and start server:
+    ```sh
+    npm start
+    ```
+  ### To seed sample data into the database, in another terminal window run:
+  ```sh
+  npm run seed
+  ```
+  ### Helpful psql command tips can be found here:
+    ```sh
+    https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546
+    ```
 
-  **** psql postgres
-
--Create a new role:
-
-  **** CREATE ROLE taco WITH LOGIN PASSWORD 'tuesday';
-
--Allow the new role, taco, to create databases:
-
-**** ALTER ROLE taco CREATEDB;
-
--Create the database:
-
-  **** CREATE DATABASE twitchvid;
-
--Connect to the new database:
-
-  **** \c twitchvid
-
--Create tables:
-
-  **** npm start
-
--To seed sample data into the database, in another terminal window run:
-
-  **** npm run seed
-
--Helpful command tips can be found here:
-
-  https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546
-```
-
-```sh
-Getting new data from twitch
+### Making API Calls to Twitch.tv
 
 -Go to dev.twitch.com and sign up for a new account
 -Locate your client-ID with the instructions provided on the website
--Follow the API instructions for more info on how to obtain specific sets of data. Here is one example of obtaining data from Twitch Streamer A_Seagull:
+-Follow the API instructions for more info on how to obtain specific sets of data. Here is one example of obtaining data from a Twitch Streamer:
 
+```sh
   curl -H 'Client-ID: <ClientID Here>' \
 -X GET 'https://api.twitch.tv/helix/videos?user_id=19070311&first=100'
 ```
