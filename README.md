@@ -34,7 +34,7 @@ From within the root directory:
 ```sh
 -npm install
 ```
-### Setup
+## Setup
 
 ### Initialize Webpack
 ```sh
@@ -43,41 +43,41 @@ From within the root directory:
 
 ### Postgresql & Server Instructions:
 
-  Install after running npm install
+  #### Install after running npm install
     ```sh
     brew install postgresql
     ```
 
-  Connect to default database:
+  #### Connect to default database:
     ```sh
     psql postgres
     ```
 
-  Create a new role:
+  #### Create a new role:
     ```sh
     CREATE ROLE taco WITH LOGIN PASSWORD 'tuesday';
     ```
-  Allow the new role, taco, to create databases:
+  #### Allow the new role, taco, to create databases:
     ```sh
     ALTER ROLE taco CREATEDB;
     ```
-  Create the database:
+  #### Create the database:
     ```sh
     CREATE DATABASE twitchvid;
     ```
-  Connect to the new database:
+  #### Connect to the new database:
     ```sh
     \c twitchvid
     ```
-  Create tables and start server:
+  #### Create tables and start server:
     ```sh
     npm start
     ```
-  To seed sample data into the database, in another terminal window run:
+  #### To seed sample data into the database, in another terminal window run:
   ```sh
   npm run seed
   ```
-  Helpful psql command tips can be found here:
+  #### Helpful psql command tips can be found here:
     ```sh
     https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546
     ```
